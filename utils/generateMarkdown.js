@@ -58,12 +58,12 @@ function generateMarkdown(data) {
   ${data.usage || "Usage information"}
 
   ## Contributing
- ${data.contributing || "Contrubuting information"}
+ ${data.contributing || "Contributing information"}
  
   ## Tests
-  ${data.tests || "Contrubuting information"}
+  ${data.tests || "Tests information"}
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data.license)} 
 
   ## Questions  
   Please reach out to ${
