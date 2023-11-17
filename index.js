@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 const { ifError } = require("assert");
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
   /* Pass your questions in here */
   {
@@ -25,28 +25,33 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    message: "What is the installation of your project?",
+    message: "Provide instructions on how to install your project:",
   },
   {
     type: "input",
     name: "usage",
-    message: "What is the usage information?",
+    message: "Provide information on project usage:",
   },
   {
     type: "input",
-    name: "contributions",
-    message: "What are the project contributions?",
+    name: "contributing",
+    message: "Provide any information on contributing guidelines:",
   },
   {
     type: "input",
-    name: "test",
-    message: "Please provide test information:",
+    name: "tests",
+    message: "Please provide tests description:",
   },
   {
     type: "input",
     name: "license",
-    message: "Please choose a license for this project:",
+    message: "Specify a license for this project:",
     choices: ("MIT", "Apache 2.0", "GNU", "Mozilla", "None"),
+  },
+  {
+    type: "input",
+    name: "author",
+    message: "Please provide your name:",
   },
   {
     type: "input",
@@ -60,14 +65,14 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
+// Function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     err ? console.error(err) : console.log("Your Readme file was created");
   });
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
   inquirer
     .prompt(questions)
