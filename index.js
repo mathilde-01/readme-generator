@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
-const { ifError } = require("assert");
+// const { ifError } = require("assert");
 
 // Array of questions for user input
 const questions = [
@@ -43,10 +43,10 @@ const questions = [
     message: "Please provide tests description:",
   },
   {
-    type: "input",
+    type: "list",
     name: "license",
     message: "Specify a license for this project:",
-    choices: ("MIT", "Apache 2.0", "GNU", "Mozilla", "None"),
+    choices: ["MIT", "Apache 2.0", "GNU", "Mozilla", "None"],
   },
   {
     type: "input",
@@ -77,10 +77,11 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
+    //   console.log(answers);
       const readmeContent = generateMarkdown(answers);
       writeToFile("README.md", readmeContent);
     })
-    .catch.error((error) => {
+    .catch((error) => {
       console.error(error);
     });
 }

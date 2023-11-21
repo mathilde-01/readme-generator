@@ -68,7 +68,7 @@ function generateMarkdown(data) {
   ## Questions  
   Please reach out to ${
     data.author
-  } if you have any questions regading this project.
+  } if you have any questions regarding this project.
 
 `;
 }
