@@ -2,33 +2,35 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   const badges = {
-    'MIT': "[![License MIT](https://img.shields.io/badge/license-MIT-blue)]",
-    "Apache 2.0": "[![License Apache 2.0](https://img.shields.io/github/license/saltstack/salt)]",
-    'GNU': "[![License GNU](https://img.shields.io/badge/license-GNU-green)]",
-    'Mozilla': "[![License Mozilla](https://img.shields.io/badge/license-Mozilla-red)]",
+    MIT: "[![License MIT](https://img.shields.io/badge/license-MIT-blue)]",
+    "Apache 2.0":
+      "[![License Apache 2.0](https://img.shields.io/github/license/saltstack/salt)]",
+    GNU: "[![License GNU](https://img.shields.io/badge/license-GNU-green)]",
+    Mozilla:
+      "[![License Mozilla](https://img.shields.io/badge/license-Mozilla-red)]",
   };
 
-  return badges ? [license] : "";
+  return badges[license] || "";
 }
 
 // Function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  const links = {
+  const licenseLinks = {
     MIT: "https://opensource.org/licenses/MIT",
     "Apache 2.0": "https://www.apache.org/licenses/LICENSE-2.0",
     "GNU 3.0": "https://www.gnu.org/licenses/gpl-3.0.html",
     "Mozilla 2.0": "https://opensource.org/licenses/MPL-2.0",
   };
 
-  return license ? links[license] : "";
+  return licenseLinks[license] || "";
 }
 
 // Function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   return !license
-    ? ''
+    ? ""
     : `## License  
     This project is licensed by [${license}](${renderLicenseLink(
         license
