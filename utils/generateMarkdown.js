@@ -3,11 +3,9 @@
 function renderLicenseBadge(license) {
   const badges = {
     'MIT': "[![License MIT](https://img.shields.io/badge/license-MIT-blue)]",
-    "Apache 2.0":
-      "[![License Apache 2.0](https://img.shields.io/github/license/saltstack/salt)]",
+    "Apache 2.0": "[![License Apache 2.0](https://img.shields.io/github/license/saltstack/salt)]",
     'GNU': "[![License GNU](https://img.shields.io/badge/license-GNU-green)]",
-    'Mozilla':
-      "[![License Mozilla](https://img.shields.io/badge/license-Mozilla-red)]",
+    'Mozilla': "[![License Mozilla](https://img.shields.io/badge/license-Mozilla-red)]",
   };
 
   return badges ? [license] : "";
