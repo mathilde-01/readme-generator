@@ -2,11 +2,11 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   const badges = {
-    MIT: "[![License MIT](https://img.shields.io/badge/license-MIT-blue)]",
+    'MIT': "[![License MIT](https://img.shields.io/badge/license-MIT-blue)]",
     "Apache 2.0":
       "[![License Apache 2.0](https://img.shields.io/github/license/saltstack/salt)]",
-    GNU: "[![License GNU](https://img.shields.io/badge/license-GNU-green)]",
-    Mozilla:
+    'GNU': "[![License GNU](https://img.shields.io/badge/license-GNU-green)]",
+    'Mozilla':
       "[![License Mozilla](https://img.shields.io/badge/license-Mozilla-red)]",
   };
 
@@ -30,9 +30,9 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   return !license
-    ? ""
+    ? ''
     : `## License  
-    This project is licensed by[${license}](${renderLicenseLink(
+    This project is licensed by [${license}](${renderLicenseLink(
         license
       )}) license.
     ${renderLicenseBadge(license)}`;
