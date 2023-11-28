@@ -16,6 +16,9 @@ function renderLicenseBadge(license) {
 // Function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  if (!license) {
+    return "";
+  }
   const licenseLinks = {
     MIT: "https://opensource.org/licenses/MIT",
     "Apache 2.0": "https://www.apache.org/licenses/LICENSE-2.0",
