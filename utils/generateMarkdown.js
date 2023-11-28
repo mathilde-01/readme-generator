@@ -12,7 +12,6 @@ function renderLicenseBadge(license) {
     Mozilla:
       "[![License: Mozilla](https://img.shields.io/badge/license-Mozilla-red)](https://opensource.org/licenses/MPL-2.0)",
   };
-  };
 
   return badges[license] || "";
 }
@@ -26,8 +25,8 @@ function renderLicenseLink(license) {
   const licenseLinks = {
     MIT: "https://opensource.org/licenses/MIT",
     "Apache 2.0": "https://www.apache.org/licenses/LICENSE-2.0",
-    "GNU 3.0": "https://www.gnu.org/licenses/gpl-3.0.html",
-    "Mozilla 2.0": "https://opensource.org/licenses/MPL-2.0",
+    GNU: "https://www.gnu.org/licenses/gpl-3.0.html",
+    Mozilla: "https://opensource.org/licenses/MPL-2.0",
   };
 
   return licenseLinks[license] || "";
