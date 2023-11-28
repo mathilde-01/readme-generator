@@ -40,7 +40,9 @@ function renderLicenseSection(license) {
   }
   return `## License
 
-This project is licensed under the [${license}](${renderLicenseLink(license)}) license.
+This project is licensed under the [${license}](${renderLicenseLink(
+    license
+  )}) license.
 
 ${renderLicenseBadge(license)}`;
 }
@@ -66,7 +68,7 @@ function generateMarkdown(data) {
   ${data.usage || "Usage information"}
 
   ## Contributing
- ${data.contributing || "Contributing information"}
+  ${data.contributing || "Contributing information"}
  
   ## Tests
   ${data.tests || "Tests information"}
