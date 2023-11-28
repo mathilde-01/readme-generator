@@ -1,13 +1,17 @@
 // Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  if (!license) {
+    return "";
+  }
   const badges = {
-    MIT: "[![License MIT](https://img.shields.io/badge/license-MIT-blue)]",
+    MIT: "[![License: MIT](https://img.shields.io/badge/license-MIT-blue)]",
     "Apache 2.0":
-      "[![License Apache 2.0](https://img.shields.io/github/license/saltstack/salt)]",
-    GNU: "[![License GNU](https://img.shields.io/badge/license-GNU-green)]",
+      "[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue)](https://www.apache.org/licenses/LICENSE-2.0)",
+    GNU: "[![License: GNU](https://img.shields.io/badge/license-GNU-green)](https://www.gnu.org/licenses/)",
     Mozilla:
-      "[![License Mozilla](https://img.shields.io/badge/license-Mozilla-red)]",
+      "[![License: Mozilla](https://img.shields.io/badge/license-Mozilla-red)](https://opensource.org/licenses/MPL-2.0)",
+  };
   };
 
   return badges[license] || "";
@@ -35,11 +39,13 @@ function renderLicenseSection(license) {
   if (!license) {
     return "";
   }
-  return `## License  
-    This project is licensed by [${license}](${renderLicenseLink(
+  return `## License    
+  
+  This project is licensed by [${license}](${renderLicenseLink(
     license
-  )}) license.
-    ${renderLicenseBadge(license)}`;
+  )}) license.    
+  
+  ${renderLicenseBadge(license)}`;
 }
 
 // TODO: Create a function to generate markdown for README
